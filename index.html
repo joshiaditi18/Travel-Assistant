@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SnapSafe Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header>
+    <h1>🛡️ SnapSafe</h1>
+    <p>Smart Tourist Safety Monitoring System</p>
+    <p class="sih-tagline">Smart India Hackathon 2025 | Problem ID: SIH252002</p>
+  </header>
+
+  <div id="notification-banner">⚠️ Weather Alert: Heavy rain expected in Shillong</div>
+
+  <section class="dashboard-labels">
+    <div class="label-box"><h3>🧍 Active Tourists</h3><p>342</p></div>
+    <div class="label-box"><h3>🚨 SOS Alerts Today</h3><p>12</p></div>
+    <div class="label-box"><h3>📊 Avg Safety Score</h3><p>78%</p></div>
+    <div class="label-box"><h3>⚠️ High-Risk Zones</h3><p>3</p></div>
+    <div class="label-box"><h3>⏱️ Response Time Avg</h3><p>4.2 min</p></div>
+  </section>
+
+  <nav>
+    <ul>
+      <li><a href="#data">Live Data</a></li>
+      <li><a href="#chart">Crowd Chart</a></li>
+      <li><a href="#incidents">Incidents</a></li>
+      <li><a href="#sos">Emergency</a></li>
+      <li><a href="#report">Report Incident</a></li>
+    </ul>
+  </nav>
+
+  <section id="data">
+    <h2>📊 Tourist Data</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Location</th>
+          <th>Safety Score</th>
+          <th>Risk Level</th>
+        </tr>
+      </thead>
+      <tbody id="tourist-table"></tbody>
+    </table>
+  </section>
+
+  <section id="chart">
+    <h2>📈 Crowd Density Chart</h2>
+    <canvas id="crowdChart" width="400" height="200"></canvas>
+  </section>
+
+  <section id="incidents">
+    <h2>🚨 Recent Incidents</h2>
+    <ul id="incident-list"></ul>
+  </section>
+
+  <section id="sos">
+    <h2>Emergency Access</h2>
+    <button onclick="sendSOS()">🚨 Send SOS Alert</button>
+    <p id="sos-status"></p>
+  </section>
+
+  <section id="report">
+    <h2>📅 Report an Incident</h2>
+    <form onsubmit="submitIncident(event)">
+      <input type="text" id="incident-desc" placeholder="Describe the incident..." required />
+      <button type="submit">Submit</button>
+    </form>
+    <p id="report-status"></p>
+  </section>
+
+  <footer>
+    <p>Contact: support@snapSafe.in | Languages: 🇮🇳 🇬🇧 🇯🇵</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
